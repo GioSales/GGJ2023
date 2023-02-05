@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private LayerMask interactableLayer;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        GameObject gameObj = collision.gameObject;
+        if(LayerChecker.IsInMask(gameObj, interactableLayer))
+        {
+            var interactable = gameObj.GetComponent<Interactable>();
+            interactable.OnInteract();
+        }
     }
 }

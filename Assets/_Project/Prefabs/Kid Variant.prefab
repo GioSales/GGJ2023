@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755620324529279588, guid: ed1e57fc83d588f48abcabbf86ceaf18, type: 3}
       propertyPath: m_Name
-      value: Kid
+      value: Kid Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3755620324529279591, guid: ed1e57fc83d588f48abcabbf86ceaf18, type: 3}
       propertyPath: m_RootOrder
@@ -58,3 +58,23 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3755620324529279587, guid: ed1e57fc83d588f48abcabbf86ceaf18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed1e57fc83d588f48abcabbf86ceaf18, type: 3}
+--- !u!1 &5367139576633816156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3755620324529279588, guid: ed1e57fc83d588f48abcabbf86ceaf18, type: 3}
+  m_PrefabInstance: {fileID: 9107771357042370104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6797485492897027371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367139576633816156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53df3fc81b787a428d5ef213f311c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
