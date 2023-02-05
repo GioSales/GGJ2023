@@ -392,23 +392,27 @@ MonoBehaviour:
     m_ActionId: 1d66662b-d814-468b-94c8-38b981224963
     m_ActionName: Main/FirstAction[/Keyboard/j]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3755620324529279587}
-        m_TargetAssemblyTypeName: ClimbSkill, Assembly-CSharp
-        m_MethodName: Climb
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d6edb897-e949-45ab-a1a6-28f9a15a3625
-    m_ActionName: Main/Climb[/Keyboard/w,/Keyboard/upArrow]
+      m_Calls: []
+    m_ActionId: 5eb6776f-0484-447f-9bd5-21f44ac267b0
+    m_ActionName: Monke/MoveLeft[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1cc011c-988d-408a-9473-29b1977ebc64
+    m_ActionName: Monke/MoveRight[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: caafa016-0f15-476e-a50d-3b610d7b16df
+    m_ActionName: Monke/Jump[/Keyboard/numpad0]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d5b8aa7-db9e-47b6-b9e8-9ce75ebc26f8
+    m_ActionName: Monke/FirstAction[/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1688488d-bf2b-4e29-acf9-95c5c9601a1d
+    m_ActionName: Monke/Climb[/Keyboard/upArrow,/Keyboard/downArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Main
+  m_DefaultActionMap: Kid
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
