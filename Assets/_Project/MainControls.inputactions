@@ -10,7 +10,7 @@
                     "type": "Button",
                     "id": "d866a3e8-4d74-4ce9-801c-88bde3d066eb",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Clamp(min=-1,max=1)",
                     "interactions": "",
                     "initialStateCheck": false
                 },
@@ -19,7 +19,7 @@
                     "type": "Button",
                     "id": "213055ab-035b-4ac3-aa06-dce5b1fdd39b",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Clamp(min=-1,max=1)",
                     "interactions": "",
                     "initialStateCheck": false
                 },
@@ -43,12 +43,12 @@
                 },
                 {
                     "name": "Climb",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "d6edb897-e949-45ab-a1a6-28f9a15a3625",
-                    "expectedControlType": "Button",
-                    "processors": "",
+                    "expectedControlType": "Axis",
+                    "processors": "Clamp(min=-1,max=1)",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -119,26 +119,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "30702de5-54d3-4da7-ab4a-52abf51538ea",
+                    "name": "1D Axis",
+                    "id": "8d9ee357-4037-4daf-afea-fd58c8b269c0",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "7ed25c59-b720-4b09-9933-35affcf378ac",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Climb",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "a20d4aa0-385f-4a21-8e88-af4579c07e4d",
+                    "name": "positive",
+                    "id": "f9b0817e-da9f-4420-81c6-3f52112663ca",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Climb",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "06792095-333f-4680-a359-aefbcf3d7552",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "377eec2d-8d87-49be-b58b-66577bd51d11",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

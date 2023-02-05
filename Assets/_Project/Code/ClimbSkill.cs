@@ -17,15 +17,19 @@ public class ClimbSkill : MonoBehaviour
     private Rigidbody2D rigidbody2d => movement.GetRigidBody();
 
     private bool climbing = false;
-    [SerializeField] private bool inClimbZone = false;
+    [SerializeField] private bool isInClimbZone = false;
+    [SerializeField] private LayerMask climbablesLayer;
+    private float verticalInput;
 
     private void Awake()
     {
         movement = GetComponent<Movement>();
     }
 
+
     public void Climb(CallbackContext cbc)
     {
+        verticalInput = cbc.ReadValue<float>();
         if (cbc.canceled)
         {
             ResetVerticalSpeed();
@@ -34,7 +38,7 @@ public class ClimbSkill : MonoBehaviour
         if (CanClimb(cbc))
         {
             StartClimbing(cbc);
-            rigidbody2d.AddForce(new Vector2(0, climbForce));
+            rigidbody2d.AddForce(new Vector2(0, verticalInput * climbForce));
         }
     }
 
@@ -45,16 +49,20 @@ public class ClimbSkill : MonoBehaviour
 
     private bool CanClimb(CallbackContext cbc)
     {
-        if(cbc.performed && inClimbZone)
+        if(cbc.performed && isInClimbZone)
         {
+            print("can climb");
             return true;
         }
+
+        print("CANNOT climb");
 
         return false;
     }
 
     private void StopClimbing()
     {
+        print("stop climbing");
         TurnOnGravity();
         movement.EnableJump();
         climbing = false;
@@ -65,6 +73,8 @@ public class ClimbSkill : MonoBehaviour
         if (climbing)
             return;
 
+        print("start climbing");
+        ResetVerticalSpeed();
         TurnOffGravity();
         movement.DisableJump();
         climbing = true;
@@ -87,5 +97,22 @@ public class ClimbSkill : MonoBehaviour
 
         rigidbody2d.gravityScale = savedGravityScale;
         gravityEnabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (LayerChecker.IsInMask(collision.gameObject, climbablesLayer))
+        {
+            isInClimbZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (LayerChecker.IsInMask(collision.gameObject, climbablesLayer))
+        {
+            isInClimbZone = false;
+            StopClimbing();
+        }
     }
 }
