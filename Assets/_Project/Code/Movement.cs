@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
 
     [Header("Refs")]
     [SerializeField] private Rigidbody2D rigidbody2d;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
 
     void Update()
     {
@@ -22,11 +24,9 @@ public class Movement : MonoBehaviour
 
         rigidbody2d.velocity = new Vector2(horizontalMovement * speed, rigidbody2d.velocity.y);
 
-    }
-
-    public void MoveLeft(CallbackContext cbc)
-    {
-        MoveHorizontal(cbc, -1);
+        if (horizontalMovement > 0) { spriteRenderer.flipX = false; } else
+        if (horizontalMovement < 0) { spriteRenderer.flipX = true; }
+        animator.SetBool("isRunning", horizontalMovement != 0);
     }
 
     private void MoveHorizontal(CallbackContext cbc, float value)
@@ -44,6 +44,11 @@ public class Movement : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    public void MoveLeft(CallbackContext cbc)
+    {
+        MoveHorizontal(cbc, -1);
     }
 
     public void MoveRight(CallbackContext cbc)
