@@ -2,7 +2,7 @@
     "name": "MainControls",
     "maps": [
         {
-            "name": "Main",
+            "name": "Kid",
             "id": "b0a110e3-e47d-4eba-93c9-a15906df5a27",
             "actions": [
                 {
@@ -10,7 +10,7 @@
                     "type": "Button",
                     "id": "d866a3e8-4d74-4ce9-801c-88bde3d066eb",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Clamp(min=-1,max=1)",
                     "interactions": "",
                     "initialStateCheck": false
                 },
@@ -19,7 +19,7 @@
                     "type": "Button",
                     "id": "213055ab-035b-4ac3-aa06-dce5b1fdd39b",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Clamp(min=-1,max=1)",
                     "interactions": "",
                     "initialStateCheck": false
                 },
@@ -40,15 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Climb",
-                    "type": "Button",
-                    "id": "d6edb897-e949-45ab-a1a6-28f9a15a3625",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -65,30 +56,8 @@
                 },
                 {
                     "name": "",
-                    "id": "450b6e3d-43aa-41a0-a230-8e2b56e31fb8",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8b4e1c96-192d-49bb-8a08-e5aa7ca7b653",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6a2a116c-ad3c-4f17-9033-7b0f41c67ad1",
-                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -117,28 +86,136 @@
                     "action": "FirstAction",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Monke",
+            "id": "8f35d490-769b-4266-a58b-a89e32ca1f2d",
+            "actions": [
+                {
+                    "name": "MoveLeft",
+                    "type": "Button",
+                    "id": "5eb6776f-0484-447f-9bd5-21f44ac267b0",
+                    "expectedControlType": "Button",
+                    "processors": "Clamp(min=-1,max=1)",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
+                    "name": "MoveRight",
+                    "type": "Button",
+                    "id": "f1cc011c-988d-408a-9473-29b1977ebc64",
+                    "expectedControlType": "Button",
+                    "processors": "Clamp(min=-1,max=1)",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "caafa016-0f15-476e-a50d-3b610d7b16df",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FirstAction",
+                    "type": "Button",
+                    "id": "9d5b8aa7-db9e-47b6-b9e8-9ce75ebc26f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Climb",
+                    "type": "Value",
+                    "id": "1688488d-bf2b-4e29-acf9-95c5c9601a1d",
+                    "expectedControlType": "Axis",
+                    "processors": "Clamp(min=-1,max=1)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "30702de5-54d3-4da7-ab4a-52abf51538ea",
-                    "path": "<Keyboard>/w",
+                    "id": "2529583f-ade5-4483-91c8-2bfabb381774",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Climb",
+                    "action": "MoveLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a20d4aa0-385f-4a21-8e88-af4579c07e4d",
+                    "id": "a495f029-8053-41a2-8bb2-8381a099e00a",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a992231-d9da-4a7c-a9cc-5ddc0bfcf6ec",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2bdf4d8-4f1a-473f-ba52-f7301f4373d3",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "5b44a4ac-c427-4021-845f-923234e9c686",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "6dde651c-f858-47b9-8cfb-3865170770b2",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Climb",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "9fd60ba9-6122-47d1-b195-e5f8410fac79",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
