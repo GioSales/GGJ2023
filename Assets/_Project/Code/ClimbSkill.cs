@@ -101,16 +101,20 @@ public class ClimbSkill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("trigger enter");
         if (LayerChecker.IsInMask(collision.gameObject, climbablesLayer))
         {
+            print("In vine trigger");
             isInClimbZone = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        print("trigger exit");
         if (LayerChecker.IsInMask(collision.gameObject, climbablesLayer))
         {
+            print("left vine trigger");
             isInClimbZone = false;
             StopClimbing();
         }
